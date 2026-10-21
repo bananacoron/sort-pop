@@ -1,12 +1,25 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#ffffff"><title>SORT! POP — ねらってつもう</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;overscroll-behavior:none}body{background:#fff;font-family:system-ui,"Hiragino Kaku Gothic ProN",sans-serif;color:#000;touch-action:none}#app{max-width:520px;margin:auto;height:100dvh;display:flex;flex-direction:column;border-inline:3px solid #000;background:#fff}header{padding:calc(env(safe-area-inset-top) + 8px) 12px 5px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #000;font-weight:900}header strong{font-size:23px}.small{font-size:11px}.top{display:flex;justify-content:space-around;align-items:center;padding:7px 8px;gap:8px}.goal{flex:1;text-align:center;border:3px solid #000;border-radius:8px;padding:4px 3px;font-weight:900;font-size:12px;min-width:0;transition:transform .16s}.goal .symbol{font-size:30px;display:block;line-height:1.05}.goal .kind{display:block;font-size:11px}.goal.bump{transform:scale(1.08)}.goal:first-child{background:#ff80c0}.goal:last-child{background:#00ffff}.change-card{position:absolute;z-index:3;top:14%;left:7%;width:86%;background:#ffff00;border:4px solid #000;border-radius:12px;padding:13px 8px;text-align:center;box-shadow:5px 6px 0 #000;pointer-events:none}.change-card.hidden{display:none}.change-title{font-weight:1000;font-size:clamp(24px,7vw,38px);line-height:1.1}.change-pair{display:flex;gap:8px;justify-content:center;margin-top:10px}.change-pair>div{flex:1;background:#fff;border:3px solid #000;border-radius:8px;padding:6px;font-weight:900}.change-pair .symbol{font-size:45px;display:block}.change-pair small{display:block}.goal.change{animation:goalpop .4s ease-in-out}@keyframes goalpop{50%{transform:scale(1.12)}}.worker{display:flex;gap:9px;align-items:center;padding:4px 10px;border-block:3px solid #000;min-height:50px;font-size:12px;font-weight:900}.worker svg{width:38px;height:38px}.worker .bar{height:9px;border:2px solid #000;background:#fff;width:100%;margin-top:4px}.fill{height:100%;width:0;background:#ff0000}.workcopy{flex:1}#stage{flex:1;min-height:100px;position:relative;touch-action:none}canvas{width:100%;height:100%;display:block;touch-action:none}.footer{border-top:3px solid #000;padding:8px 12px calc(env(safe-area-inset-bottom) + 10px);display:flex;align-items:center;justify-content:space-between;gap:7px;font-size:12px;font-weight:900}.btn{background:#ffff00;border:3px solid #000;padding:8px 11px;border-radius:7px;font-weight:900}.overlay{position:absolute;inset:0;background:#fff;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;text-align:center;gap:10px;overflow-y:auto}.overlay.result{justify-content:flex-start;padding-top:16px}.overlay.result h1{font-size:clamp(24px,7vw,36px);letter-spacing:-1px;line-height:1.2}.overlay.result p{font-size:13px;line-height:1.45}.overlay.result .modegroup{margin-top:2px}.overlay.result button{font-size:14px;padding:8px}.overlay.result #play{font-size:17px}.result-panel{width:100%;border:3px solid #000;border-radius:10px;padding:9px;background:#fff}.result-score{font-size:21px;font-weight:900}.result-total{font-size:17px;font-weight:900;margin:4px}.parade-track{height:58px;position:relative;overflow:hidden;border-bottom:3px solid #000;background:#e0ffff}.parade-march{display:flex;gap:14px;position:absolute;left:100%;bottom:4px;font-size:30px;white-space:nowrap;animation:march 3.5s linear infinite}@keyframes march{to{transform:translateX(-160%)}}.result-types{font-size:14px;font-weight:900;margin:6px 0}.sound-btn{border:2px solid #000;background:#fff;border-radius:7px;font-size:11px;font-weight:900;padding:7px 9px}.overlay h1{font-size:clamp(43px,13vw,72px);letter-spacing:-5px;margin:0;line-height:1}.overlay h1 span{color:#ff0080}.overlay p{font-size:14px;line-height:1.9;margin:0;font-weight:750}.overlay button{font-size:21px;padding:14px 24px}.hidden{display:none}.guide{font-size:11px;font-weight:900;background:#ffff00;border:2px solid #000;padding:4px;text-align:center}.mode{border:2px solid #000;padding:7px 12px;background:#fff;font-weight:900;border-radius:7px}.mode.selected{background:#00ffff}.modegroup{display:flex;gap:7px}#notice{font-size:12px;min-width:92px;text-align:right}
-.level-progress{padding:5px 10px 7px;border-bottom:2px solid #000;background:#fff}.level-head{display:flex;justify-content:space-between;align-items:baseline;gap:6px;font-size:12px;font-weight:900}.level-head #levelRemaining{font-size:11px}.level-segments{display:flex;gap:4px;margin-top:5px;height:12px}.level-segment{flex:1;border:2px solid #000;background:#fff;border-radius:3px;transition:background .16s,transform .16s}.level-segment.done{background:#ffb000}.level-segment.last{animation:nextblink .8s ease-in-out infinite alternate}@keyframes nextblink{to{background:#ffe478;transform:scaleY(1.1)}}.level-next{font-size:10px;font-weight:800;margin-top:3px;color:#444}#levelTitle{font-size:13px} header{padding:5px 9px 4px;min-height:64px}header strong{font-size:20px}.top{padding:4px 7px;gap:6px}.goal{padding:2px 3px;font-size:11px}.goal .symbol{font-size:24px}.goal .kind{font-size:10px}.worker{padding:2px 7px;min-height:40px;font-size:10px;gap:5px}.worker svg{width:29px;height:29px}.worker .bar{height:7px}.sound-btn{padding:5px;font-size:10px}.footer{padding:5px 8px calc(env(safe-area-inset-bottom) + 5px);font-size:11px;white-space:nowrap}.footer #notice{min-width:0;font-size:10px}.footer #combo{font-size:11px}.level-segments{height:7px;gap:2px;margin:3px auto 0;width:100px}.level-segment{border-width:1px}.compact-next{font-size:9px;font-weight:800;line-height:1.2;margin-top:2px}.small{font-size:10px}#stage{min-height:180px} </style></head><body><div id="app"><header><div><div class="small">SCORE</div><strong id="score">0</strong></div><div style="text-align:center"><div class="small" id="modeLabel">STACK MODE</div><strong id="time">∞</strong><div id="levelSegments" class="level-segments" aria-label="レベル進捗"></div><div id="levelRemaining" class="compact-next">あと2回</div><span id="levelTitle" hidden></span><span id="levelNext" hidden></span></div><div style="text-align:right"><div class="small">BEST</div><strong id="best">0</strong></div></header><div class="top"><div class="goal" id="goalL">♥ HEART ←</div><div class="goal" id="goalR">→ CLOUD ☁</div></div><div class="worker"><div id="workerFace"></div><div class="workcopy"><div id="workerText">スタッフ待機中</div><div class="bar"><div class="fill" id="fill"></div></div></div><span id="percent">0%</span><button class="sound-btn" id="pauseBtn" type="button" aria-label="一時停止">⏸</button><button class="sound-btn" id="soundBtn" type="button">🔊 ON</button></div><div id="stage"><canvas id="game"></canvas><div id="changeCard" class="change-card hidden"><div class="change-title">↔ CHANGE! ↔</div><div class="change-pair"><div id="changeLeft"></div><div id="changeRight"></div></div><div style="font-weight:900;font-size:12px;margin-top:8px">新しい仕分け先をチェック！</div></div><div id="pausePanel" class="overlay hidden" style="z-index:8;background:#ffffffed"><h1 style="font-size:42px;letter-spacing:0">⏸ PAUSE</h1><p>ゲームを一時停止中</p><button class="btn" id="resumeBtn" type="button">▶ ゲーム再開</button></div><div class="overlay" id="overlay"><div class="small">RETRO SORTING ARCADE</div><h1>SORT<span>!</span><br>POP</h1><p>2種類を左右へ仕分け！ 最初は5回成功でレベルUP！ 変更は落下中の子がいなくなってから！<br>間違えると3つに分裂＋片付けゲージ−15%！<br>LV.5からは予告つきで左右がSWAP！<br>👾お邪魔はレベル2から！ 触らず見送ろう！<br>小間使いは端を上下、反対側へ歩いて移動！<br>的に当てると PERFECT ⭐<br>🐨速いけど片付け上手／👨ゆっくりだけど片付けも遅い<br>レベル2でサイズ、3で落下位置、4でお邪魔の動きが変化！<br>的当てで片付けゲージをためよう！ 100%でCLEAN UP！</p><div class="small" style="font-weight:900;margin:7px auto">Ver. 0.8.7 · 2026.10.21</div><div class="modegroup"><button class="mode selected" data-mode="endless">∞ ENDLESS</button><button class="mode" data-mode="quick">60秒 QUICK</button></div><button class="btn" id="play">あそぶ！ ▶</button><div class="small">※ 物理挙動は試作版。ゲーム内課金なし</div></div></div><div class="footer"><div id="lives">♥ ♥ ♥</div><div id="combo">COMBO ×0</div><div id="notice">READY!</div><button class="btn" id="restart">↻</button></div></div>
+.level-progress{padding:5px 10px 7px;border-bottom:2px solid #000;background:#fff}.level-head{display:flex;justify-content:space-between;align-items:baseline;gap:6px;font-size:12px;font-weight:900}.level-head #levelRemaining{font-size:11px}.level-segments{display:flex;gap:4px;margin-top:5px;height:12px}.level-segment{flex:1;border:2px solid #000;background:#fff;border-radius:3px;transition:background .16s,transform .16s}.level-segment.done{background:#ffb000}.level-segment.last{animation:nextblink .8s ease-in-out infinite alternate}@keyframes nextblink{to{background:#ffe478;transform:scaleY(1.1)}}.level-next{font-size:10px;font-weight:800;margin-top:3px;color:#444}#levelTitle{font-size:13px} header{padding:5px 9px 4px;min-height:64px}header strong{font-size:20px}.top{padding:4px 7px;gap:6px}.goal{padding:2px 3px;font-size:11px}.goal .symbol{font-size:24px}.goal .kind{font-size:10px}.worker{padding:2px 7px;min-height:40px;font-size:10px;gap:5px}.worker svg{width:29px;height:29px}.worker .bar{height:7px}.sound-btn{padding:5px;font-size:10px}.footer{padding:5px 8px calc(env(safe-area-inset-bottom) + 5px);font-size:11px;white-space:nowrap}.footer #notice{min-width:0;font-size:10px}.footer #combo{font-size:11px}.level-segments{height:7px;gap:2px;margin:3px auto 0;width:100px}.level-segment{border-width:1px}.compact-next{font-size:9px;font-weight:800;line-height:1.2;margin-top:2px}.small{font-size:10px}#stage{min-height:180px} 
+.festival-flags{font-size:16px;color:#e60040;letter-spacing:2px;margin:4px 0}
+.festival-scene{height:190px;position:relative;border:3px solid #111;background:#fffef1;overflow:hidden}
+.festival-scene:after{content:"";position:absolute;bottom:14px;left:0;right:0;border-top:3px solid #111}
+.basket-paint{position:absolute;bottom:18px;left:12px;width:86px;height:60px;background:repeating-linear-gradient(90deg,#cf8d4e 0 12px,#ae693d 12px 15px);border:4px solid #111;clip-path:polygon(0 0,100% 0,90% 100%,10% 100%);z-index:2;transform:rotate(-5deg);transition:transform .5s}
+.basket-paint:before{content:"";position:absolute;top:8px;left:0;right:0;border-top:3px solid #78462a}
+.basket-paint.empty{transform:rotate(9deg) translateY(5px)}
+.festival-friends{position:absolute;left:108px;right:3px;bottom:20px;top:6px;display:flex;align-content:flex-end;align-items:flex-end;justify-content:flex-start;gap:3px;flex-wrap:wrap;overflow:hidden}
+.festival-pal{display:inline-flex;width:29px;height:32px;align-items:center;justify-content:center;font-size:25px;font-weight:900;-webkit-text-stroke:1px #111;text-shadow:1px 1px #111;animation:festivalPop .38s steps(4,end) both}
+.festival-pal:nth-child(3n){transform:rotate(12deg)}
+.festival-pal:nth-child(4n){transform:rotate(-12deg)}
+.split-friend{opacity:.8}
+@keyframes festivalPop{from{opacity:0;transform:translate(-55px,-40px) rotate(-30deg) scale(.5)}to{opacity:1;transform:translate(0,0) rotate(0) scale(1)}}
+</style></head><body><div id="app"><header><div><div class="small">SCORE</div><strong id="score">0</strong></div><div style="text-align:center"><div class="small" id="modeLabel">STACK MODE</div><strong id="time">∞</strong><div id="levelSegments" class="level-segments" aria-label="レベル進捗"></div><div id="levelRemaining" class="compact-next">あと2回</div><span id="levelTitle" hidden></span><span id="levelNext" hidden></span></div><div style="text-align:right"><div class="small">BEST</div><strong id="best">0</strong></div></header><div class="top"><div class="goal" id="goalL">♥ HEART ←</div><div class="goal" id="goalR">→ CLOUD ☁</div></div><div class="worker"><div id="workerFace"></div><div class="workcopy"><div id="workerText">スタッフ待機中</div><div class="bar"><div class="fill" id="fill"></div></div></div><span id="percent">0%</span><button class="sound-btn" id="pauseBtn" type="button" aria-label="一時停止">⏸</button><button class="sound-btn" id="soundBtn" type="button">🔊 ON</button></div><div id="stage"><canvas id="game"></canvas><div id="changeCard" class="change-card hidden"><div class="change-title">↔ CHANGE! ↔</div><div class="change-pair"><div id="changeLeft"></div><div id="changeRight"></div></div><div style="font-weight:900;font-size:12px;margin-top:8px">新しい仕分け先をチェック！</div></div><div id="pausePanel" class="overlay hidden" style="z-index:8;background:#ffffffed"><h1 style="font-size:42px;letter-spacing:0">⏸ PAUSE</h1><p>ゲームを一時停止中</p><button class="btn" id="resumeBtn" type="button">▶ ゲーム再開</button></div><div class="overlay" id="overlay"><div class="small">RETRO SORTING ARCADE</div><h1>SORT<span>!</span><br>POP</h1><p>左右に仕分けて、的を狙おう！<br>間違えると3つに分裂。<br>ゲージ満タンで、もう一人がカゴを交換！<br>最後はみんなでお祭り！</p><div class="small" style="font-weight:900;margin:7px auto">Ver. 0.8.8 · 2026.10.21</div><div class="modegroup"><button class="mode selected" data-mode="endless">∞ ENDLESS</button><button class="mode" data-mode="quick">60秒 QUICK</button></div><button class="btn" id="play">あそぶ！ ▶</button><div class="small">※ 物理挙動は試作版。ゲーム内課金なし</div></div></div><div class="footer"><div id="lives">♥ ♥ ♥</div><div id="combo">COMBO ×0</div><div id="notice">READY!</div><button class="btn" id="restart">↻</button></div></div>
 <script>
 "use strict";
 const $=id=>document.getElementById(id),canvas=$('game'),ctx=canvas.getContext('2d'),stage=$('stage');
 const TYPES=[{id:'heart',color:'#ff0080',r:19},{id:'cloud',color:'#00bfff',r:24},{id:'star',color:'#ffff00',r:23},{id:'circle',color:'#ff0000',r:20},{id:'bar',color:'#00aa00',r:25},{id:'flower',color:'#ff80c0',r:23}];
-const PAIRS=[[0,1],[2,3],[4,5]];let swapped=false,swapClock=0,swapWarning=0,paused=false,overflowClock=[0,0],comboFlash=0,comboBreak=0,cleanFlash=0,changeQueued=false;let difficulty='normal',routeSide=0,routePhase=0,routeClock=0,routeFrom=0,routeTo=1,routeWiggle=0,successes=[],paradeTimer=null;let storedBaskets=[],cleanupQueue=[],cleanupSide=-1,cleanupPhase=0,cleanupCarry=0,exchangeFlash=[0,0],exchangeSide=-1;let mode='endless',running=false,score=0,best=0,lives=3,combo=0,fever=0,busy=0,worker='',carrier='koala',time=60,elapsed=0,spawnDelay=0,pair=0,correct=0,active=null,shots=[],bits=[],aim=null,last=0,w=320,h=400,raf=0,noticeTimer=0,helperX=0,helperY=0,helperDir=1,feverIds=new Set(),nextId=1,feverPending=false;
+const PAIRS=[[0,1],[2,3],[4,5]];let swapped=false,swapClock=0,swapWarning=0,paused=false,overflowClock=[0,0],comboFlash=0,comboBreak=0,cleanFlash=0,changeQueued=false;let difficulty='normal',routeSide=0,routePhase=0,routeClock=0,routeFrom=0,routeTo=1,routeWiggle=0,successes=[],paradeTimer=null;let storedBaskets=[],cleanupQueue=[],cleanupSide=-1,cleanupPhase=0,cleanupCarry=0,exchangeFlash=[0,0],exchangeSide=-1,cleanerX=0,cleanerY=0;let mode='endless',running=false,score=0,best=0,lives=3,combo=0,fever=0,busy=0,worker='',carrier='koala',time=60,elapsed=0,spawnDelay=0,pair=0,correct=0,active=null,shots=[],bits=[],aim=null,last=0,w=320,h=400,raf=0,noticeTimer=0,helperX=0,helperY=0,helperDir=1,feverIds=new Set(),nextId=1,feverPending=false;
 try{best=Number(localStorage.getItem('sortpop_stack_best')||0)}catch(e){}
 // Original retro sounds synthesized locally with Web Audio; no third-party audio assets.
 let audioCtx=null,soundOn=true,particles=[],floaters=[],flash=0,shake=0,hitCount=0,changePause=0,binBounce=[0,0],level=1,pendingLevel=false,levelFlash=0,avoided=0,forceNuisance=false,nextLevelAt=5;
@@ -46,15 +59,15 @@ spawnDelay=0;
 }
 function feverStart(){
  if(busy||!running)return;
- worker=carrier;
+ worker=carrier==='koala'?'brother':'koala';
  // Snapshot each basket. New arrivals are not included in the exchange.
  cleanupQueue=[0,1].map(side=>({side,ids:new Set(bits.filter(p=>p.side===side).map(p=>p.id))}))
   .filter(task=>task.ids.size).sort((a,b)=>b.ids.size-a.ids.size);
  feverIds=new Set(cleanupQueue.flatMap(task=>[...task.ids]));
  if(!cleanupQueue.length){fever=0;return}
- cleanupSide=cleanupQueue[0].side;cleanupPhase=0;cleanupCarry=0;
+ cleanupSide=cleanupQueue[0].side;cleanupPhase=0;cleanupCarry=0;cleanerX=w/2;cleanerY=Math.max(65,rim()-100);
  busy=1;feverPending=true;
- $('workerText').textContent='🧺 カゴ交換中';
+ $('workerText').textContent='🎯 '+(carrier==='koala'?'コアラ':'お兄さん')+' ／ カゴ交換 '+(worker==='koala'?'コアラ':'お兄さん');
  sfx('fever');
 }
 function exchangeBasket(task){
@@ -80,14 +93,14 @@ function advanceCleanup(dt){
  cleanupSide=task.side;
  const targetX=task.side===0?w*.25:w*.75;
  const targetY=rim()-26;
- const speed=carrier==='koala'?260:120;
+ const speed=worker==='koala'?240:110;
  if(cleanupPhase===0){
-  const dx=targetX-helperX,dy=targetY-helperY,dist=Math.hypot(dx,dy);
-  if(dist<=speed*dt+3){helperX=targetX;helperY=targetY;cleanupPhase=1;cleanupCarry=carrier==='koala'?.22:.55}
-  else{helperX+=dx/dist*speed*dt;helperY+=dy/dist*speed*dt}
+  const dx=targetX-cleanerX,dy=targetY-cleanerY,dist=Math.hypot(dx,dy);
+  if(dist<=speed*dt+3){cleanerX=targetX;cleanerY=targetY;cleanupPhase=1;cleanupCarry=worker==='koala'?.26:.65}
+  else{cleanerX+=dx/dist*speed*dt;cleanerY+=dy/dist*speed*dt}
  }else if(cleanupPhase===1){
   cleanupCarry-=dt;
-  if(cleanupCarry<=0){exchangeBasket(task);cleanupPhase=2;cleanupCarry=carrier==='koala'?.38:.85}
+  if(cleanupCarry<=0){exchangeBasket(task);cleanupPhase=2;cleanupCarry=worker==='koala'?.45:.95}
  }else{
   cleanupCarry-=dt;
   if(cleanupCarry<=0){cleanupQueue.shift();if(cleanupQueue.length){cleanupPhase=0}else feverFinish()}
@@ -118,13 +131,46 @@ function moveHelper(dt){
    if(t>=1){routePhase=0;routeSide=routeTo;routeClock=0;helperDir=routeTo===0?-1:1}
  }
 }
-function finish(msg){paused=false;$('pausePanel').classList.add('hidden');running=false;cancelAnimationFrame(raf);sfx('end');if(score>best){best=score;try{localStorage.setItem('sortpop_stack_best',String(best))}catch(e){}}const ov=$('overlay');ov.classList.remove('hidden');ov.classList.add('result');ov.querySelector('h1').innerHTML='🎉 おつかれさまパレード！';const total=successes.length;let freq={};successes.forEach(t=>freq[TYPES[t].id]=(freq[TYPES[t].id]||0)+1);const labels={heart:'♥',cloud:'☁',star:'★',circle:'●',bar:'▬',flower:'✿'};let typesText=Object.entries(freq).map(([k,v])=>(labels[k]||k)+' '+v+'匹').join('　');const symbols=successes.map(x=>labels[TYPES[x].id]||'●');const finalBaskets=[...storedBaskets,...[0,1].map(side=>({side,types:bits.filter(p=>p.side===side).map(p=>({type:p.type,wrong:!!p.wrong}))})).filter(b=>b.types.length)];
-const paradePeople=finalBaskets.flatMap(b=>b.types);
-const paradeSymbols=paradePeople.map(p=>labels[TYPES[p.type].id]||'●');
-const wrongCount=paradePeople.filter(p=>p.wrong).length;
-const basketIcons=finalBaskets.map(b=>'🧺').join(' ');
-ov.querySelector('p').innerHTML='<div class="result-panel"><div style="font-weight:900;font-size:12px">'+msg.replace(/<br>/g,' ')+'</div><div class="result-score">SCORE '+score+' <span style="font-size:12px">/ BEST '+best+'</span></div><div class="result-total"><span id="paradeCount">0</span> / '+total+' 匹、仕分け成功！</div><div class="parade-track"><div class="parade-march" id="paradeLine">'+(symbols.length?symbols.slice(0,12).join('　'):'♪')+'</div></div><div class="result-types" id="paradeTypes"></div></div>';
-$('play').textContent='もう一回 ▶';hud();let n=0;if(paradeTimer)clearInterval(paradeTimer);paradeTimer=setInterval(()=>{n=Math.min(total,n+Math.max(1,Math.ceil(total/55)));const c=$('paradeCount'),l=$('paradeLine'),t=$('paradeTypes');if(!c||!l){clearInterval(paradeTimer);paradeTimer=null;return}c.textContent=n;if(n&&n%4===0&&soundOn)tone(380+n%7*55,.045,0,'square',.025);l.textContent='🧺 '+(paradeSymbols.slice(Math.max(0,Math.floor(n/Math.max(1,total))*paradeSymbols.length-10),Math.max(12,Math.ceil(n/Math.max(1,total)*paradeSymbols.length))).join('　')||'♪');if(n>=total){if(t)t.textContent=typesText||'まだ仕分けた子はいないよ';clearInterval(paradeTimer);paradeTimer=null;}},65)}
+function finish(msg){
+ paused=false;$('pausePanel').classList.add('hidden');running=false;cancelAnimationFrame(raf);sfx('end');
+ if(score>best){best=score;try{localStorage.setItem('sortpop_stack_best',String(best))}catch(e){}}
+ const ov=$('overlay');ov.classList.remove('hidden');ov.classList.add('result');
+ ov.querySelector('h1').textContent='おまつり パレード！';
+ const labels={heart:'♥',cloud:'☁',star:'★',circle:'●',bar:'▬',flower:'✿'};
+ const finalBaskets=[...storedBaskets,...[0,1].map(side=>({side,types:bits.filter(p=>p.side===side).map(p=>({type:p.type,wrong:!!p.wrong}))})).filter(b=>b.types.length)];
+ const paradePeople=finalBaskets.flatMap(b=>b.types);
+ const countTotal=paradePeople.length,correctTotal=successes.length;
+ const wrongTotal=paradePeople.filter(p=>p.wrong).length;
+ let freq={};successes.forEach(t=>freq[t]=(freq[t]||0)+1);
+ ov.querySelector('p').innerHTML=`<div class="result-panel">
+ <div class="result-score">SCORE ${score} <span style="font-size:12px">/ BEST ${best}</span></div>
+ <div class="festival-flags">▲　▼　▲　▼　▲　▼　▲</div>
+ <div class="festival-scene"><div id="festivalBasket" class="basket-paint"><span></span></div><div id="festivalFriends" class="festival-friends"></div></div>
+ <div class="result-total"><span id="paradeCount">0</span> / ${countTotal} 匹 あつまった！</div>
+ <div class="result-types" id="paradeTypes">カゴをあけるよ…</div>
+ <div style="font-size:11px">正解 ${correctTotal}匹 ／ 分裂した子 ${wrongTotal}匹（得点には含まれないよ）</div>
+ <div style="font-size:10px;margin-top:3px">${msg.replace(/<br>/g,' ')}</div></div>`;
+ $('play').textContent='もう一回 ▶';hud();
+ if(paradeTimer){clearInterval(paradeTimer);paradeTimer=null}
+ let n=0,wait=0;
+ const friends=$('festivalFriends'),count=$('paradeCount'),types=$('paradeTypes');
+ paradeTimer=setInterval(()=>{
+  if(!running&&wait++<7)return;
+  if(n<countTotal){
+   const person=paradePeople[n],kind=TYPES[person.type],label=labels[kind.id]||'●';
+   const el=document.createElement('span');el.className='festival-pal '+(person.wrong?'split-friend':'');
+   el.textContent=label;el.style.color=kind.color;el.style.animationDelay='0s';
+   friends.appendChild(el);
+   if(friends.children.length>28)friends.removeChild(friends.firstChild);
+   n++;count.textContent=n;
+   if(n%4===0&&soundOn)tone(400+(n%5)*70,.06,0,'square',.022);
+  }else{
+   types.textContent=Object.entries(freq).map(([k,v])=>labels[TYPES[Number(k)].id]+' '+v+'匹').join('　')||'またあそんでね！';
+   $('festivalBasket').classList.add('empty');
+   clearInterval(paradeTimer);paradeTimer=null;
+  }
+ },180);
+}
 function mistake(msg){sfx('bad');shake=5;popText(msg,w/2,Math.max(60,rim()-75),'#ff0000',24);lives--;if(combo>=2){comboBreak=1.1;popText('COMBO BREAK!',w/2,Math.max(42,rim()-113),'#e60043',21)}combo=0;note(msg);if(lives<=0)finish('GAME<br>OVER')}
 function shape(t,x,y,r,a=0){ctx.save();ctx.translate(x,y);ctx.rotate(a);ctx.fillStyle=TYPES[t].color;ctx.strokeStyle='#000';ctx.lineWidth=2.5;ctx.lineJoin='round';ctx.beginPath();
 if(t===0){ctx.moveTo(0,r*.82);ctx.bezierCurveTo(-r*1.4,-r*.05,-r*.95,-r*1.05,0,-r*.35);ctx.bezierCurveTo(r*.95,-r*1.05,r*1.4,-r*.05,0,r*.82)}
@@ -144,6 +190,30 @@ function physics(dt){let bounds=bins(),base=floor();for(const p of bits){p.settl
 for(let iteration=0;iteration<4;iteration++){for(let i=0;i<bits.length;i++)for(let j=i+1;j<bits.length;j++){let a=bits[i],b=bits[j];if(a.side!==b.side)continue;let dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy)||.001,limit=a.r+b.r;if(d>=limit)continue;let nx=dx/d,ny=dy/d,over=limit-d;let ay=a.y+a.r>=base-1,by=b.y+b.r>=base-1;let share=ay?.1:by?.9:.5;a.x-=nx*over*share;b.x+=nx*over*(1-share);a.y-=ny*over*share;b.y+=ny*over*(1-share);let rel=(b.vx-a.vx)*nx+(b.vy-a.vy)*ny;if(rel<0){let impulse=-rel*.45;a.vx-=impulse*nx;b.vx+=impulse*nx;a.vy-=impulse*ny;b.vy+=impulse*ny}a.spin-=nx*.07;b.spin+=nx*.07}
 for(const p of bits){let bb=bounds[p.side];p.x=Math.max(bb.x+p.r,Math.min(bb.x+bb.width-p.r,p.x));p.y=Math.min(base-p.r,p.y)}}
 for(let side=0;side<2;side++){const overflowing=bits.some(p=>p.side===side&&p.settleAge>1.1&&p.y-p.r<rim()-7&&!feverIds.has(p.id));overflowClock[side]=overflowing?overflowClock[side]+dt:0;if(overflowClock[side]>.85){overflowClock[side]=0;bits=bits.filter(p=>p.side!==side);feverIds=new Set([...feverIds].filter(id=>bits.some(p=>p.id===id)));mistake('OVERFLOW! ♥−1 '+(side===0?'LEFT':'RIGHT'));popText('OVERFLOW!',bins()[side].x+bins()[side].width/2,rim()-25,'#ff0033',24);$('workerText').textContent=(side===0?'左':'右')+'のカゴをリセット！';break}}}
+
+function paintBasket(x,y,scale=1,filled=false){
+ ctx.save();ctx.translate(x,y);ctx.scale(scale,scale);
+ ctx.lineWidth=3;ctx.strokeStyle='#111';ctx.fillStyle='#d58b48';
+ ctx.beginPath();ctx.moveTo(-32,-17);ctx.lineTo(32,-17);ctx.lineTo(27,22);ctx.lineTo(-27,22);ctx.closePath();ctx.fill();ctx.stroke();
+ ctx.strokeStyle='#95552f';ctx.lineWidth=2;
+ for(let k=-18;k<=18;k+=12){ctx.beginPath();ctx.moveTo(k,-15);ctx.lineTo(k+4,20);ctx.stroke()}
+ for(let yy=-6;yy<=14;yy+=11){ctx.beginPath();ctx.moveTo(-28,yy);ctx.lineTo(28,yy);ctx.stroke()}
+ ctx.strokeStyle='#111';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(-35,-17);ctx.lineTo(35,-17);ctx.stroke();
+ if(filled){ctx.fillStyle='#ff0080';ctx.strokeStyle='#111';ctx.lineWidth=2;ctx.beginPath();ctx.arc(-11,-23,9,0,7);ctx.arc(7,-26,10,0,7);ctx.fill();ctx.stroke()}
+ ctx.restore();
+}
+function paintCleaner(x,y,kind,carry){
+ ctx.save();ctx.translate(x,y);ctx.strokeStyle='#111';ctx.lineWidth=3;
+ ctx.fillStyle=kind==='koala'?'#909090':'#ffce9b';
+ if(kind==='koala'){for(let a of [-12,12]){ctx.beginPath();ctx.arc(a,-27,8,0,7);ctx.fill();ctx.stroke()}}
+ ctx.beginPath();ctx.arc(0,-19,14,0,7);ctx.fill();ctx.stroke();
+ if(kind!=='koala'){ctx.fillStyle='#111';ctx.fillRect(-14,-33,28,7)}
+ ctx.fillStyle=kind==='koala'?'#ff3030':'#00a750';ctx.fillRect(-13,-3,26,28);ctx.strokeRect(-13,-3,26,28);
+ ctx.beginPath();ctx.moveTo(-7,25);ctx.lineTo(-8,38);ctx.moveTo(7,25);ctx.lineTo(8,38);ctx.moveTo(-13,4);ctx.lineTo(-24,12);ctx.moveTo(13,4);ctx.lineTo(24,12);ctx.stroke();
+ if(kind==='koala'){ctx.fillStyle='#111';ctx.beginPath();ctx.ellipse(0,-16,5,7,0,0,7);ctx.fill()}
+ if(carry)paintBasket(0,12,.63,true);
+ ctx.restore();
+}
 let lastDraw=performance.now();function draw(){ctx.clearRect(0,0,w,h);ctx.save();if(shake>0)ctx.translate((Math.random()-.5)*shake,(Math.random()-.5)*shake);ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);let b=bins();ctx.lineWidth=4;for(let i=0;i<2;i++){let v=b[i];let bump=binBounce[i]>0?Math.sin(binBounce[i]/.22*Math.PI)*6:0;ctx.fillStyle=i===0?'#ffe0f0':'#e0ffff';ctx.fillRect(v.x,rim()+bump,v.width,floor()-rim()-bump);ctx.strokeStyle=i===0?'#ff0080':'#0000ff';ctx.beginPath();ctx.moveTo(v.x,rim()+bump);ctx.lineTo(v.x,floor());ctx.lineTo(v.x+v.width,floor());ctx.lineTo(v.x+v.width,rim()+bump);ctx.stroke();ctx.setLineDash([5,5]);ctx.strokeStyle='#000';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(v.x+v.width/2,rim()+7);ctx.lineTo(v.x+v.width/2,rim()+33);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#000';ctx.font='bold 11px sans-serif';ctx.textAlign='center';ctx.fillText(i===0?'← LEFT':'RIGHT →',v.x+v.width/2,rim()+48);
 if(exchangeFlash[i]>0){
  ctx.save();ctx.globalAlpha=Math.min(1,exchangeFlash[i]*1.7);
@@ -152,6 +222,7 @@ if(exchangeFlash[i]>0){
  ctx.fillStyle='#00a68a';ctx.font='900 13px system-ui';ctx.textAlign='center';
  ctx.fillText('✦',v.x+v.width/2,rim()+27);ctx.restore();
 }
+paintBasket(v.x+v.width/2,floor()-17,.8,false);
 const inBin=bits.filter(p=>p.side===i);
 const occupied=inBin.length?Math.max(0,Math.min(1,(floor()-Math.min(...inBin.map(p=>p.y-p.r)))/(floor()-rim()))):0;
 if(occupied>.65){ctx.save();ctx.strokeStyle=occupied>.86?'#ff0033':'#ffae00';ctx.lineWidth=occupied>.86?7:5;ctx.globalAlpha=.65+.35*Math.sin(elapsed*10);ctx.strokeRect(v.x+3,rim()+3,v.width-6,floor()-rim()-5);ctx.fillStyle=occupied>.86?'#e6002d':'#b87700';ctx.font='900 13px system-ui';ctx.fillText(occupied>.86?'DANGER!':'いっぱいになりそう!',v.x+v.width/2,rim()-9);ctx.restore()}
@@ -172,11 +243,7 @@ for(const p of bits)shape(p.type,p.x,p.y,p.r,p.angle);
 for(const s of shots){let t=s.progress;let x=s.x+(s.tx-s.x)*t,y=s.y+(s.ty-s.y)*t-48*Math.sin(t*Math.PI);shape(s.type,x,y,s.r*.9,t*2)}
 if(active){if(active.type===-1){ctx.save();ctx.translate(active.x,active.y);ctx.fillStyle='#9b59b6';ctx.strokeStyle='#000';ctx.lineWidth=3;ctx.beginPath();ctx.arc(0,0,active.r,Math.PI,0);ctx.lineTo(active.r,active.r);ctx.lineTo(active.r*.45,active.r*.65);ctx.lineTo(0,active.r);ctx.lineTo(-active.r*.45,active.r*.65);ctx.lineTo(-active.r,active.r);ctx.closePath();ctx.fill();ctx.stroke();ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(-6,-3,4,0,Math.PI*2);ctx.arc(6,-3,4,0,Math.PI*2);ctx.fill();ctx.fillStyle='#000';ctx.fillRect(-5,-2,2,3);ctx.fillRect(7,-2,2,3);ctx.restore()}else shape(active.type,active.x,active.y,active.r*1.35,elapsed*.5);ctx.fillStyle='#000';ctx.textAlign='center';ctx.font='bold 12px sans-serif';ctx.fillText(active.type===-1?'DON’T TOUCH!':'SWIPE ← →',active.x,active.y-active.r*1.4-8)}
 if(aim&&active){let r=canvas.getBoundingClientRect(),dx=(aim.mx??aim.x)-aim.x,dy=(aim.my??aim.y)-aim.y;ctx.strokeStyle='#000';ctx.lineWidth=3;ctx.setLineDash([7,5]);ctx.beginPath();ctx.moveTo(active.x,active.y);ctx.lineTo(active.x+dx*.9,active.y+dy*.9);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#ff0080';ctx.beginPath();ctx.arc(active.x+dx*.9,active.y+dy*.9,6,0,7);ctx.fill()}
-if(busy&&cleanupSide>=0){
- ctx.save();ctx.textAlign='center';ctx.font='900 13px system-ui';
- ctx.fillStyle='#087e6a';ctx.fillText('🧺 ↔',bins()[cleanupSide].x+bins()[cleanupSide].width/2,rim()-12);
- ctx.restore();
-}
+if(busy&&cleanupSide>=0){paintCleaner(cleanerX,cleanerY,worker,cleanupPhase===2);}
 drawEffects(Math.min(.032,(performance.now()-lastDraw)/1000||.016));lastDraw=performance.now();if(flash>0){ctx.fillStyle='rgba(255,255,0,'+(flash*1.2)+')';ctx.fillRect(0,0,w,h)}
 // Level-up card is drawn over the moving game for 0.72 seconds, without pausing time or input.
 if(combo>=2||comboBreak>0){ctx.save();ctx.textAlign='center';ctx.lineWidth=4;ctx.strokeStyle='#fff';ctx.fillStyle=comboBreak>0?'#e60043':combo>=10?'#ff0080':'#111';ctx.font='900 '+(comboFlash>0?25:19)+'px system-ui';const label=comboBreak>0?'COMBO BREAK!':combo+' COMBO!';ctx.strokeText(label,w/2,Math.max(40,rim()*.16));ctx.fillText(label,w/2,Math.max(40,rim()*.16));ctx.restore()}if(false&&cleanFlash>0){ctx.save();ctx.globalAlpha=Math.min(1,cleanFlash*1.5);ctx.textAlign='center';ctx.fillStyle='#008a44';ctx.strokeStyle='#fff';ctx.lineWidth=5;ctx.font='900 24px system-ui';ctx.strokeText(busy>0?'🧹 CLEAN UP!':'✨ CLEAN!',w/2,Math.max(76,rim()*.29));ctx.fillText(busy>0?'🧹 CLEAN UP!':'✨ CLEAN!',w/2,Math.max(76,rim()*.29));ctx.restore()}if(swapWarning>0){ctx.save();ctx.fillStyle='#ffff00';ctx.strokeStyle='#000';ctx.lineWidth=3;ctx.fillRect(w*.18,Math.max(28,rim()*.3),w*.64,46);ctx.strokeRect(w*.18,Math.max(28,rim()*.3),w*.64,46);ctx.fillStyle='#000';ctx.font='900 22px system-ui';ctx.textAlign='center';ctx.fillText('↔ SWAP SOON!',w/2,Math.max(60,rim()*.3+30));ctx.restore()}if(levelFlash>0){const progress=1-levelFlash/.72,opacity=Math.min(1,progress*8,levelFlash*9);ctx.save();ctx.globalAlpha=opacity;const cw=Math.min(w-28,310),ch=136,cx=w/2,cy=Math.max(90,Math.min(rim()-90,h*.37));ctx.fillStyle='#fff';ctx.strokeStyle='#000';ctx.lineWidth=3;ctx.fillRect(cx-cw/2,cy-ch/2,cw,ch);ctx.strokeRect(cx-cw/2,cy-ch/2,cw,ch);ctx.textAlign='center';ctx.fillStyle='#ff0080';ctx.font='900 19px system-ui';ctx.fillText('★ LEVEL UP! ★',cx,cy-36);ctx.fillStyle='#000';ctx.font='900 25px system-ui';ctx.fillText('LEVEL '+level,cx,cy-8);const types=currentTypes();shape(types[0],cx-65,cy+30,17,0);shape(types[1],cx+65,cy+30,17,0);ctx.fillStyle='#000';ctx.font='900 12px system-ui';ctx.fillText('LEFT',cx-65,cy+60);ctx.fillText('RIGHT',cx+65,cy+60);ctx.restore()}
@@ -186,7 +253,7 @@ if(changeQueued&&shots.length===0&&!active){changeQueued=false;showChange();spaw
 if(level>=5){if(swapClock<=0&&swapWarning<=0)swapClock=Math.max(8,16-(level-5)*1.1);if(swapWarning>0){swapWarning-=dt;if(swapWarning<=0){if(shots.length===0&&!active&&!changeQueued){doSwap()}else swapWarning=.08}}else{swapClock-=dt;if(swapClock<=0){swapWarning=1.1;note('SWAP! もうすぐ左右交代');popText('↔ SWAP SOON!',w/2,Math.max(60,rim()-90),'#ff0080',23)}}}
 levelFlash=Math.max(0,levelFlash-dt);comboFlash=Math.max(0,comboFlash-dt);comboBreak=Math.max(0,comboBreak-dt);cleanFlash=Math.max(0,cleanFlash-dt);exchangeFlash=exchangeFlash.map(v=>Math.max(0,v-dt));if(mode==='quick'){time-=dt;if(time<=0){finish('TIME<br>UP!');return}}if(noticeTimer>0){noticeTimer-=dt;if(noticeTimer<=0)noteReset()}
 // Staff moves across both bins continuously, including during cleanup.
-if(busy)advanceCleanup(dt);else moveHelper(dt)
+moveHelper(dt);if(busy)advanceCleanup(dt)
 if(!active){spawnDelay-=dt;if(spawnDelay<=0)spawn()}else{active.age+=dt;
 let fallSpeed=(carrier==='koala'?125:89)*(1+Math.min(.10,(level-1)*.012));
 if(active.pattern==='rush'&&active.age>.75)fallSpeed*=1.75;
@@ -204,4 +271,4 @@ function noteReset(){$('notice').textContent='AIM!';noticeTimer=0}
 document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.mode;document.querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('selected',x===b));hud()}));
 $('play').addEventListener('click',start);$('restart').addEventListener('click',start);
 $('workerFace').innerHTML=staffSvg('koala');hud();draw();
-</script><div id="versionTag" style="position:fixed;right:8px;bottom:5px;z-index:99;font:10px system-ui,sans-serif;color:#555;background:#ffffffbb;border-radius:4px;padding:2px 4px;pointer-events:none">Ver. 0.8.7 · 2026.10.21</div><div style="position:fixed;right:5px;bottom:2px;font:9px system-ui;color:#555;pointer-events:none">Ver. 0.8.7</div></body></html>
+</script><div id="versionTag" style="position:fixed;right:8px;bottom:5px;z-index:99;font:10px system-ui,sans-serif;color:#555;background:#ffffffbb;border-radius:4px;padding:2px 4px;pointer-events:none">Ver. 0.8.8 · 2026.10.21</div></body></html>
